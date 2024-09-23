@@ -1,0 +1,48 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<CommandTable xmlns="http://schemas.microsoft.com/VisualStudio/2005-10-18/CommandTable" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+  <!-- Include necessary standard headers -->
+  <Extern href="stdidcmd.h"/>
+  <Extern href="vsshlids.h"/>
+
+  <Commands package="guidUnload_ProjectPackage">
+    <Groups>
+      <!-- Define a menu group within the Tools menu -->
+      <Group guid="guidUnload_ProjectPackageCmdSet" id="MyMenuGroup" priority="0x0600">
+        <Parent guid="guidSHLMainMenu" id="IDM_VS_MENU_TOOLS"/>
+      </Group>
+    </Groups>
+
+    <Buttons>
+      <!-- Define the "Unload Project" button -->
+      <Button guid="guidUnload_ProjectPackageCmdSet" id="UnloadProjectsCommandId" priority="0x0100" type="Button">
+        <Parent guid="guidUnload_ProjectPackageCmdSet" id="MyMenuGroup" />
+        <Icon guid="guidImages" id="bmpPic1" />
+        <Strings>
+          <ButtonText>Unload Project</ButtonText>
+        </Strings>
+      </Button>
+    </Buttons>
+
+    <Bitmaps>
+      <!-- Ensure this path to the bitmap is correct -->
+      <Bitmap guid="guidImages" href="Resources\UnloadProjectsCommand.png" usedList="bmpPic1"/>
+    </Bitmaps>
+  </Commands>
+
+  <Symbols>
+    <!-- Package GUID -->
+    <GuidSymbol name="guidUnload_ProjectPackage" value="{89d4e283-19ce-4375-adb6-37d84c070f4e}" />
+
+    <!-- Command set GUID and command IDs -->
+    <GuidSymbol name="guidUnload_ProjectPackageCmdSet" value="{83e94eba-b858-4e56-9634-cac5fc707209}">
+      <IDSymbol name="MyMenuGroup" value="0x1020" />
+      <IDSymbol name="UnloadProjectsCommandId" value="0x0100" />
+    </GuidSymbol>
+
+    <!-- Bitmap GUID and IDs -->
+    <GuidSymbol name="guidImages" value="{ce47c612-673f-469b-8c28-739e11c43790}">
+      <IDSymbol name="bmpPic1" value="1" />
+    </GuidSymbol>
+  </Symbols>
+</CommandTable>
